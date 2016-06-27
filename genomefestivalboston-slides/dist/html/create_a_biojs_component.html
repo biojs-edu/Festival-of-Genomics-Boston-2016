@@ -26,7 +26,7 @@
                 </section>
                 <section>
                      <h3>TASK</h3>
-                     <p class="first_in_slide left_create">Create a BioJS component that displays a barchart that visualizes de contribution of the bases of a biological sequence.</p>
+                     <p class="first_in_slide left_create">Create a BioJS component that displays a barchart that visualizes the contribution of the bases of a biological sequence.</p>
                      <br/>
 				     <img src="../img/barchart.png" style="border:0px"/>
                      <code class="inline">CAGTGCATGatACGTCAGTGCATGCTGGGGGGGGGgcatgcatgcatgCC</code>
@@ -71,6 +71,11 @@
 				<section>
 					<section>
 						<h2>Bootstrapping</h2>
+					</section>
+					<section>
+                                          <h3>Getting Node and Npm</h3>
+                                          <p>Install Node via <span class="vizbi">https://nodejs.org</p>
+                                          <p>Already using node or the node version manager (NVM)? Skip this part!</p>
 					</section>
 					<section>
 						<h3>Slush</h3>
@@ -177,20 +182,7 @@ sniper": {
 					<section>
 						<h2>Modules and Dependencies</h2>
 					</section>
-                                        <section>
-                                                <h3>Playing with the example</h3>
-                                                <br/>
-                                                <p class='left_create' >Keep <code class="inline">npm run w</code> running. <br/><br/>Open the example file <code class="inline">biojs-vis-example/examples/simple.js</code> in your favourite editor:</p>
-<pre><code class="javascript">// if you don't specify a html file, the sniper will generate a div with id "rootDiv"
-var app = require("biojs-vis-example");
-var instance = new app({el: rootDiv, text: 'biojs'});</code></pre>
-                                                <p class="left_create">Let's have a look at the <code class="inline">biojsvisexample()</code> method</p>
-<pre><code class="javascript">
-var Barchart = require("./barchart.js");
-module.exports = biojsvisexample = function(opts){
-  var bc = new Barchart(opts);
-};</code></pre>
-                                        </section>
+
 					<section>
 						<h3>Modules in Node.js</h3>
 						<p><a href="https://nodejs.org/api/modules.html">https://nodejs.org/api/modules.html</a></p>
@@ -214,13 +206,28 @@ console.log(example); // - from another module</code></pre>
 							<p class='left_create' ><code class="inline">biojs-vis-example/lib/barchart.js</code>:</p>
 							<pre><code class="javascript">var Barchart = function(opts) {
 	var container = opts.el;
-	// container.textContent = "BARCHART";
+	container.textContent = "BARCHART";
 	container.setAttribute("class", "header");
 }
 module.exports = Barchart;
 </code></pre>
 						</div>
 					</section>
+                                        <section>
+                                                <h3>Include deps with the example</h3>
+                                                <br/>
+                                                <p class='left_create' >Keep <code class="inline">npm run w</code> running. <br/><br/>Open the example file <code class="inline">biojs-vis-example/examples/simple.js</code> in your favourite editor:</p>
+<pre><code class="javascript">// if you don't specify a html file, the sniper will generate a div with id "rootDiv"
+var app = require("biojs-vis-example");
+var instance = new app({el: rootDiv, text: 'biojs'});</code></pre>
+                                                <p class="left_create">Let's have a look at the <code class="inline">biojsvisexample()</code> method</p>
+<pre><code class="javascript">
+var Barchart = require("./barchart.js");
+module.exports = biojsvisexample = function(opts){
+  var bc = new Barchart(opts);
+  this.el.setAttribute("class", "header");
+};</code></pre>
+                                        </section>
 					<section>
 						<h3>Dependencies in Node.js</h3>
 						<br/>
