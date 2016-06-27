@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Protein Viewer Demo | BioJS Workshop @ Genome Festival Boston</title>
-		<meta charset="utf-8">
-                <script src="http://ebi-uniprot.github.io/CDN/feature-viewer/featuresviewer.js"></script>
-                <link href="http://ebi-uniprot.github.io/CDN/feature-viewer/css/main.css" rel="stylesheet"/>
-                <link href="http://ebi-uniprot.github.io/CDN/feature-viewer/css/fontello.css" rel="stylesheet"/>
-	</head>
-	<body>
+        <head>
+                <title>Protein Viewer Demo | BioJS Workshop @ Festival of Genomics Boston</title>
+                <meta charset="utf-8">
+   <!-- <script src="http://ebi-uniprot.github.io/CDN/feature-viewer/featuresviewer.js"></script>
+    <link href="http://ebi-uniprot.github.io/CDN/feature-viewer/css/main.css" rel="stylesheet"/>
+    <link href="http://ebi-uniprot.github.io/CDN/feature-viewer/css/fontello.css" rel="stylesheet"/> -->
+        <script>
+            var getData = function(){
+                /* Get the value inside the input identfied as 'accession' 
+                  Tip: use the attribute 'value'*/
+                var accession = '';
+                
+                /* Get the element identified as 'target_ft' */
+                var element = null;
+            }
+        </script>
+        </head>
+        <body>
                 <div>
-                  <input id="accession">
-                  <button onClick="getData();">Get Data/</button>
+                  <input id="">
+                  <button onClick="">Get Data</button>
                 </div>
-		<div id="target_ft" width="1200px"/>
-		<script>
-                  function getData(){
-                    var acc = document.getElementById("accession").value;
-                    var element = document.getElementById("target_ft");
-                    var app = require('biojs-vis-proteinfeaturesviewer');
-                    var instance = new app({
-                      el: element,
-                      uniprotacc: acc
-                    });
-                    console.log(acc);
-                  }
-
-		</script>
-	</body>
+                <div id="" width="1200px"/>
+        </body>
 </html>
